@@ -9,21 +9,12 @@ print(obj.index)
 obj2 = pd.Series([2, 1, -7, 3], index=['a', 'b', 'c', 'd'])
 print(obj2)
 
-dictionary = { 
-    'Pears': 3,
-    'Apples': 2,
-    'Oranges': 4
-}
+dictionary = { 'Pears': 3, 'Apples': 2, 'Oranges': 4 }
 
 obj3 = pd.Series(dictionary)
 print(obj3)
 
-fruits = [
-    'Cherries',
-    'Pears',
-    'Apples',
-    'Oranges'
-]
+fruits = [ 'Cherries', 'Pears', 'Apples', 'Oranges' ]
 
 obj4 = pd.Series(dictionary, index=fruits)
 print(obj4)
@@ -54,7 +45,6 @@ print(df.columns)
 print(df.index)
 print(df.values)
 
-
 print(df.head(2))
 
 location = ['Ewe', 'Igbo', 'Benin', 'Togo', 'Nigeria']
@@ -66,3 +56,5 @@ print(df)
 print(df.index)
 print(df.iloc[0])
 print(df.iloc[-1])
+print(df.loc[['Ewe', 'Togo']])
+
