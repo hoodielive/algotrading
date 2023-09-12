@@ -34,7 +34,7 @@ for i in range(len(obj4)):
 data = {
     'id': [1, 2, 3, 4, 5],
     'name': ['Jon', 'Doe', 'Jane', 'Docy', 'Billy'],
-    'total buy': [22.4, 34.5, 99.2, 50.1, 12]
+    'total buy': [22.4, 34.5, 99.2, 50.1, 12],
 }
 
 df = pd.DataFrame(data)
@@ -51,7 +51,7 @@ location = ['Ewe', 'Igbo', 'Benin', 'Togo', 'Nigeria']
 df['location'] = location
 print(df.location)
 
-df.index = df.name0
+df.index = df.name
 print(df)
 print(df.index)
 print(df.iloc[0])
