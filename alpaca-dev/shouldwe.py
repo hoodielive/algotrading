@@ -29,20 +29,20 @@ while True:
     position = get_position(symbol=SYMBOL)
     
     # SCIENTIFICALLY CHECK IF WE SHOULD BUY OR SELL
-    gods_say_buy = random.choice([True, False])
-    print(f"Holding: {position} / Gods: {gods_say_buy}")
+    the_veran_says_buy = random.choice([True, False])
+    print(f"Holding: {position} / veran: {the_veran_says_buy}")
     #CHECK IF WE SHOULD BUY
-    if position == 0 and gods_say_buy == True:
+    if position == 0 and the_veran_says_buy == True:
         # WE BUY ONE BITCOIN
-        print('The gods have spoken:')
+        print('The veran has spoken:')
         print(f'Symbol: {SYMBOL} / Side: BUY / Quantity: 1')
         api.submit_order(SYMBOL, qty=1, side='buy', type='market', time_in_force='gtc')
     #HECK IF WE SHOULD SELL
-    elif position > 0 and gods_say_buy == False:
+    elif position > 0 and the_veran_says_buy == False:
         # WE SELL ONE BITCOIN
-        print('The gods have spoken:')
+        print('The veran have spoken:')
         print(f'Symbol: {SYMBOL} / Side: SELL / Quantity: 1')
         api.submit_order(SYMBOL, qty=1, side='sell', type='market', time_in_force='gtc')
-    print('Lets wait for the gods to manifest again...')
+    print('Lets wait for the veran to manifest again...')
     print("*"*20)
     time.sleep(10)
