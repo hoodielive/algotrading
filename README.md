@@ -38,3 +38,17 @@ Example: Low Correlation between equities/stocks and fixed income
 2. Short-Term Deposits
 3. Treasury Bills
 
+
+Long Position :: hopes for the best relative to a stock. Buying share(s) and hoping that they will increase in value. Trend should go up.
+Buy: buy at 10.00, but sale at 20.00 for a +10 profit.
+
+Short Position :: hopes for the devaluing of an asset for a profit.
+Buy the right to sale in the future. Pay for the contract to sale.
+
+
+Take profit
+
+
+Stop Lost
+
+Limit orders only.
