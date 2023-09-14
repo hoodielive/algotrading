@@ -47,8 +47,43 @@ Buy the right to sale in the future. Pay for the contract to sale.
 
 
 Take profit
-
-
 Stop Lost
-
 Limit orders only.
+Spread the difference between (ask and bid)
+
+EMA (Exponential Moving Average)
+Is the trend clearly defined?
+If so, is it going up or down?
+Are you going long or short?
+Take 9, 26, & 50 samples
+Window over the signals
+
+RSI (Relative Strength Index)
+Answer to the question: How hard are people buying or selling.
+Are we headed in the right/good direction? 
+It oscillates between 0 - 100. 50 neither buying or selling
+Between 50 and 70 lots of buying
+Between 30 and 50 lots of selling
+Only trade between 30 and 70
+100 = buying alot
+0 = selling alot
+
+Stochastic Oscillator
+How is asset price compared to the past
+if 100 compared the past oscillation is has no run left to grow.
+
+BOT Structure
+
+Loop:
+  Asset
+  Trend Analysis:
+    1. General Trend
+    2. Instant Trend
+    3. RSI
+    4. Stochastic
+  Enter Position
+    Hold Position OPEN
+      + check gain
+      + stochastic crossing 
+Note: In parallel
+Exit position - Go back to top of analysis
