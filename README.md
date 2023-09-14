@@ -87,3 +87,25 @@ Loop:
       + stochastic crossing 
 Note: In parallel
 Exit position - Go back to top of analysis
+
+Loop:
+Hold Position:
+Enter (IN)
+Check Price (download data)
+Set stop loss
+Set take profit
+
+Algo (done in parallel):
+Load Data 
+Condition 1 or:
+  Check take profit
+Condition 2 or:
+  Check stochastic (looking for change in trend (intraday - 5 minute candles))
+Condition 3 or:
+  Check stop loss
+If anyone of these conditions are 'True' - Exit
+
+Closing (add timer - maybe 20mins or 30mins)
+After successful closing - trade again
+After abysmal closing - analyze the logs to understand what happened - Don't fear, trade again!
+GT, IT, RSI, STOCHASTIC
