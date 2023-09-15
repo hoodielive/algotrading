@@ -1,4 +1,3 @@
-# ... previous imports ...
 
 class TradingStrategy:
 
