@@ -1,7 +1,3 @@
-# Define the asset and output it as a String.
-    # Input: Keyboard
-    # Output: String
-
 # OGBE-ALPHA
 # Loop until timemout 2hrs.
 # Perform the initial check.
