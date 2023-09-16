@@ -45,4 +45,42 @@
         # Output: boolean (True=confirmed, False=not-confirmed)
         # If fails, return to OYEKU
 
+# Submit Order(limit order)->Interact with Broker/API
+    # Input: n of shares of asset, desired price
+    # Output: boolean (confirmed=True or False), get position id
+    # If fail, abort / got to Ogbe
 
+# check position->does position exist?
+    # Input: position ID (integer)
+    # Output: boolean (confirmed=True or False)
+    # If fail, abort / got to Ogbe
+
+# Loop until timeout (~8h)
+# Enter position mode->loop->check the conditions in parallel (If true - close position)
+    # If->Check take profit->close position
+        # Input: current gains
+        # Output: boolean
+    # Elif->Check stop loss->if True->close position
+        # Input: are we losing $
+        # Output: boolean
+    # Elif->Check stochastic crossing->If True->close position
+        # Step 1: Pull 5min ohlc data
+            # Input: asset
+            # Output: ohlc data (5 min candles)
+        # Step 2: see whether the stochastic curves are crossing
+            # Input: ohlc data (5 min candles)
+            # Output: boolean
+
+# Get out
+# Submit Order(market)->Interact with Broker/API
+    # Input: n of shares of asset, position id
+    # Output: boolean
+    # If fail, retry until it works
+
+# check position->does position exist?
+    # Input: position ID (integer)
+    # Output: boolean (still exists?)
+    # If false, abort / go back to Submit Order
+
+# Wait 15 minutes
+# End
