@@ -1,15 +1,54 @@
+# encoding: utf-8
+
+
+class Trader:
+    def __init__(self, ticker):
+        lg.info('Trader initialized with ticker %s.' %ticker)
+        self.ticker = ticker
+
+# Check if asset is tradable->ask the broker/API if asset is tradable.
+        # Input: String (asset)
+        # Output: Boolean
+            # If fails, return to OGBE
+
+
+# Set stop loss->takes a price as input and sets the stop loss.
+        # Input: buying price
+        # Output: String (stop loss)
+
+# Set take profit->takes a price as an input and sets take profit.
+        # Input: entry price
+        # Output: String (take profit)
+
+# Load historical data:
+        # Input: ticker, interval, entry->limit
+        # Output: Array (ohlc data)
+
+# Get open positions
+        # Input: ticker
+        # Output: boolean (True=already open, False=not open)
+
+# Submit Order->gets our order through the API(retry)
+        # Input: order data
+        # Output: boolean (True=order succeeded, False=failed)
+
+# Cancel order->cancels order (retry)
+        # Input: order id
+        # Output: boolean (True=order cancels, False=failed)
+
+# Check position->check whether position is opened or not opened
+        # Input: ticker
+        # Output: boolean (True=order processed, False=failed)
+
+    def run(self):
+        pass
 # OGBE-ALPHA
 # Loop until timemout 2hrs.
 # Perform the initial check.
 # Check the position->ask the broker/API if we have an open position with asset.
-    # Input: String
-    # Output: Boolean (True if exists and False if it does NOT exist)
-        # If fails, return to OGBE
-
-# Check if asset is tradable->ask the broker/API if asset is tradable.
-    # Input: String
-    # Output: Boolean
-        # If fails, return to OGBE
+        # Input: String
+        # Output: Boolean (True if exists and False if it does NOT exist)
+            # If fails, return to OGBE
 
 # General Trend.
 # Load 30 min candles->demand the API to chart with 30min candles.

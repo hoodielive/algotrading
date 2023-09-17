@@ -43,8 +43,9 @@ def main():
     clean_open_orders()
     ticker=get_ticker()
 
+    trader = Trader(ticker)
     # Run trading bot.
- 
+
     # Input: String(ticker)
     # Output: boolean (success=True, failure=False)
 
