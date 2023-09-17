@@ -10,11 +10,30 @@ class Trader:
         # Input: String (asset)
         # Output: Boolean
             # If fails, return to OGBE
-
+    def is_tradable(self, ticker):
+        try:
+            # Get asset from alpaca wrapper.
+            if not asset.tradable:
+                lg.info('The asset %s is not tradable.' %ticker)
+                return False
+            else:
+                lg.info('The asset %s is tradable.' %ticker)
+        except:
+            lg.error('The asset %s is not available.' %ticker)
+            return False
 
 # Set stop loss->takes a price as input and sets the stop loss.
-        # Input: buying price
+        # Input: entry price, direction (long/short)
         # Output: String (stop loss)
+
+    def set_stoploss(self, entryPrice, direction):
+        stopLossMargin = 0.05 # %margin
+
+        try:
+            if direction == 'long':
+
+
+
 
 # Set take profit->takes a price as an input and sets take profit.
         # Input: entry price
