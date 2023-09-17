@@ -1,6 +1,9 @@
-# Import needed libraries
+# encoding: utf-8
+from traderlib import *
+from logger import *
 
 # Initialize the Logger
+initialize_logger()
 
 # Check trading account make sure we're good to go - i.e. balance
 
