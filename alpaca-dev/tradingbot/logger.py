@@ -32,6 +32,7 @@ def initialize_logger():
 
     # init log
     lg.info('Log initialized.')
+    lg.error('Error - something went wrong.')
 
 
 

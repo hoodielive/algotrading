@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+import sys
 
 class Trader:
     def __init__(self, ticker):
@@ -8,7 +8,7 @@ class Trader:
 
 # Check if asset is tradable->ask the broker/API if asset is tradable.
         # Input: String (asset)
-        # Output: Boolean
+        # Output: boolean
             # If fails, return to OGBE
     def is_tradable(self, ticker):
         try:
@@ -23,22 +23,38 @@ class Trader:
             return False
 
 # Set stop loss->takes a price as input and sets the stop loss.
-        # Input: entry price, direction (long/short)
+        # Input: entry price, posit (long/short)
         # Output: String (stop loss)
 
-    def set_stoploss(self, entryPrice, direction):
+    def set_stoploss(self, entryPrice, posit):
         stopLossMargin = 0.05 # %margin
-
+        
         try:
-            if direction == 'long':
+            if posit == 'long':
+                # 10 - (10 * 0.05) = 9.5
+                stopLoss = entryPrice - (entryPrice * stopLossMargin)
+                return stopLoss
+            elif posit == 'short':
+                # 10 - (10 * 0.05) = 10.5
+                stopLoss = entryPrice + (entryPrice * stopLossMargin)
+                return stopLoss
+            else:
+                raise ValueError
+        
+        except Exception as e:
+            lg.error('The position is neither long nor short: %s' %str(posit))
+            sys.exit()
 
-
+        return stopLoss
 
 
 # Set take profit->takes a price as an input and sets take profit.
         # Input: entry price
         # Output: String (take profit)
-
+    
+    def set_take_profit(self):
+        pass
+    
 # Load historical data:
         # Input: ticker, interval, entry->limit
         # Output: Array (ohlc data)
