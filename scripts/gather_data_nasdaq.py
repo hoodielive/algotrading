@@ -16,6 +16,5 @@ df = nas.get_table(
     paginate = True,
 )
 
-#
 print(f'Downloaded {len(df)} rows of data.')
 print(df.head())
