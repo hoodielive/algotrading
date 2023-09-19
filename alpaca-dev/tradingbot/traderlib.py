@@ -52,16 +52,45 @@ class Trader:
         # Input: entry price
         # Output: String (take profit)
     
-    def set_take_profit(self):
-        pass
-    
+    def set_take_profit(self, entryPrice, posit):
+        takeProfitMargin = 0.1    
+        try:
+            if posit == 'long':
+                # 10 - (10 * 0.1) = $11
+                takeProfit = entryPrice + (entryPrice * takeProfitMargin)
+                return takeProfit
+            elif posit == 'short':
+                # 10 - (10 * 0.1) = $9
+                takeProfit = entryPrice - (entryPrice * takeProfitMargin)
+                return takeProfit
+            else:
+                raise ValueError
+        
+        except Exception as e:
+            lg.error('The position is neither long nor short: %s' %str(posit))
+            sys.exit()
+
+        return stopLoss
+        
 # Load historical data:
         # Input: ticker, interval, entry->limit
         # Output: Array (ohlc data)
-
+    
 # Get open positions
-        # Input: ticker
+        # Input: assetID
         # Output: boolean (True=already open, False=not open)
+    
+    def get_open_positions(self, assetID):
+        
+        # ask alpaca wrapper for the list of open positions.
+        
+        positions = [] 
+        for position in positions:
+            if position.symbol == assetID:
+                return True
+            else:
+                return False
+            
 
 # Submit Order->gets our order through the API(retry)
         # Input: order data
@@ -72,8 +101,26 @@ class Trader:
         # Output: boolean (True=order cancels, False=failed)
 
 # Check position->check whether position is opened or not opened
-        # Input: ticker
+        # Input: asset
         # Output: boolean (True=order processed, False=failed)
+    
+    def check_position(self, asset):
+        maxAttempts = 5
+        attempt = 0
+        while attempt < maxAttempts:
+            try:
+                # Ask alpaca wrapper for position.
+                
+                position = []
+                currentPrice = position.current_price
+                lg.info('The position was checked. The current price is %2.f' %currentPrice)
+                return True
+            except Exeception as e:
+                lg.info('Position not found for %s. Waiting for it...', %asset)
+                time.sleep(3000) # wait for 3 seconds and retry.
+                attempt += 1
+        lg.info('Position not found for %s. Not waiting for it any more.' %asset)
+        return False
 
     def run(self):
         pass
